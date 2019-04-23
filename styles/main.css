@@ -1,0 +1,22 @@
+body{
+  padding-left: 10%;
+}
+
+h1{
+  font-weight: bold;
+}
+
+.material-icons{
+  font-size: 1.1rem;
+}
+
+header {
+  height: 10vh;
+  justify-content: center;
+}
+
+button {
+  padding: 5px;
+  color: indigo;
+  border-radius: 5px;
+}
