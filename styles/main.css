@@ -1,19 +1,21 @@
 body{
-  padding-left: 10%;
+  padding-left: 5%;
 }
 
 h1{
   font-weight: bold;
 }
 
-.material-icons{
-  font-size: 1.1rem;
+input.mdl-textfield__input {
+  background-color: lightgray;
+  border-radius: 5px;
+  border-color: none;
 }
 
-header {
-  height: 10vh;
-  justify-content: center;
-}
+/* .material-icons{
+  font-size: 1.1rem;
+} */
+
 
 button {
   padding: 5px;
