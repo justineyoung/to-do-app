@@ -1,9 +1,9 @@
 function onReady() {
   //declare id variable
-  // let toDoId = 0;
+  let id = 0;
 
   //"toDos" is our array
-  const toDos = [];
+  let toDos = [];
 
   function renderTheUI(){
       const toDoList = document.getElementById('toDoList');
@@ -14,9 +14,16 @@ function onReady() {
         const checkbox = document.createElement('input');
         checkbox.type = "checkbox";
         //creates delete button
-        // const destroy = document.createElement('button');
+        const destroy = document.createElement('button');
         //creates "delete" text inside said button
-        // destroy.textContent = "Delete";
+        destroy.textContent = "Delete";
+
+        destroy.addEventListener('click', event => {
+          toDos = toDos.filter(function(a){
+            return a.id !== toDo.id;
+          })
+          renderTheUI();
+        });
 
         newLi.textContent = toDo.title;
 
@@ -24,7 +31,7 @@ function onReady() {
         toDoList.appendChild(newLi);
 
         //adds delete button to each list
-        // newLi.appendChild(destroy);
+        newLi.appendChild(destroy);
       });
 
     };
@@ -38,9 +45,10 @@ function onReady() {
       title: newToDoText.value,
       complete: false,
       //#2, store value of id variable
-      // id: toDoId.value,
-      // id = id + 1;
+      id: id,
     });
+
+    id++;
     newToDoText.value = '';
 
     renderTheUI();
@@ -51,19 +59,8 @@ function onReady() {
     createNewToDo();
   });
 
-  //create event listener to delete item
-  // destroy.addEventListener('click', function(event){
-  //   toDoList.removeChild(this.parentElement);
-  //   toDoList.filter()
-
-    //remove to do from "ToDos" array, comparing toDo.id with id of each item
-    //when delete button is clicked using the .filter() array method
-  //
-  //   renderTheUI();
-  // })
-
   renderTheUI();
-}
+};
 
 window.onload = function() {
   onReady();
